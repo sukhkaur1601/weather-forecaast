@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Weather forecast page</title>
+    <style>
+        .model {
+            display: none;
+        }
+
+        body {
+            background-image: url('images/');
+        }
+
+        .background {
+            position: fixed;
+            margin-left: -8px;
+            margin-top: -6px;
+            z-index: -1;
+
+        }
+
+        .transparent {
+            background-color: rgba(247, 247, 247, 0.4);
+            height: 100px;
+            width: 900px;
+            margin-left: 38%;
+            margin-top: -73%;
+            z-index: 2;
+            position: absolute;
+            border-radius: 50px;
+
+        }
+
+        .scroll {
+            z-index: 2px;
+            position: absolute;
+
+        }
+
+        .form-group {
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #city_name {
+            border-radius: 10px;
+            height: 30px;
+            width: 200px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+
+            margin-left: 10px;
+        }
+
+        #temperature {
+            height: 30px;
+            margin-left: 30px;
+            width: 80px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+
+        #Search {
+            height: 30px;
+            width: 150px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        .transp {
+            background-color: rgba(247, 247, 247, 0.4);
+            height: 205px;
+            width: 980px;
+            margin-left: 35%;
+            margin-top: -61%;
+            z-index: 1;
+            position: absolute;
+            border-radius: 50px;
+            overflow: auto;
+
+        }
+
+        .transp3 {
+            background-color: rgba(247, 247, 247, 0.4);
+            height: 400px;
+            width: 140%;
+            margin-left: 5%;
+            margin-top: -40%;
+            z-index: 1;
+            position: absolute;
+            border-radius: 50px;
+            overflow: auto;
+        }
+
+        section h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin-left: 35%;
+        }
+
+        section h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            margin-left: 10%;
+        }
+
+        #current {
+            margin-left: 35%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+        }
+
+        thead tr {
+            margin-left: -2px;
+        }
+
+        #tb_forecast {
+            width: 100%;
+            padding-left: 6%;
+        }
+
+        button {
+            margin-top: -5%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            height: 40px;
+            margin-left: 550px;
+            width: 140px;
+            border-radius: 40px;
+        }
+
+        .icon {
+            margin-top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="background">
+            <img id="myImg" src="images/sun-shining.jpg" width="168%" height="756">
+
+            <div class="transparent">
+                <div class="scroll">
+
+                    <div class="form-group ">
+                        <table>
+                            <tr>
+                                <label for="city_name">Select the city Name :</label>
+                                <select id="city_name" name="Select the city Name :">
+                                    <option value="CANADA">Montreal</option>
+                                    <option value="CANADA">Brampton</option>
+                                    <option value="New Zealand">Willington</option>
+                                    <option value="CANADA">Surrey</option>
+                                    <option value="ITALY">Roma</option>
+                                </select>
+                                <select id="temperature">
+                                    <option value="c">&deg;C</option>
+                                    <option value="f">&deg;F</option>
+                                </select>
+
+                                <button type="Button" id="search">Search </button>
+
+                            </tr>
+                    </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="transp">
+            <section id="current">
+                <h1>Current Weather</h1>
+                <p class="temperature">Temperature is <span class="value"></span></p>
+                <p class="description">Sky is <span class="value"></span></p>
+                <p class="icon">Icon : <img src="" alt="" class="value" /></p>
+            </section>
+        </div>
+        <div class="transp3">
+
+            <section id="forecast">
+                <h2>Weather forecast</h2>
+                <div id="data_panel">
+                    <table id="tb_forecast">
+                        <thead>
+                            <tr>
+                                <th>Hour</th>
+                                <th>Temp</th>
+                                <th>Icon</th>
+                                <th>Desc.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="model">
+                                <td class="hour"></td>
+                                <td class="temperature"></td>
+                                <td class="icon"><img src="" alt="" /></td>
+                                <td class="description"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+        </section>
+        </div>
+    </main>
+    <script src="script/main.js"></script>
+</body>
+
+</html>
